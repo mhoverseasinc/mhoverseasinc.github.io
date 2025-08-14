@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH  Overseas Inc. - Premium Plastic Packaging Supplies</title>
+    
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #A0522D;
+            --accent-color: #D2691E;
+            --success-color: #228B22;
+            --text-dark: #3E2723;
+            --text-light: #8D6E63;
+            --bg-light: #FFF8E1;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .btn-custom {
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* Product Cards */
+        .products-section {
+            padding: 100px 0;
+            background: #F5F5DC;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: #F5F5DC;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            height: 100%;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #3E2723;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Page Styles */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 120px 0 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .product-detail-card {
+            background: #F5F5DC;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .size-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.25rem;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: var(--success-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .contact-info-card { margin-top: 2rem; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <i class="bi bi-box-seam me-2"></i>MH Overseas Inc.
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="showPage('stretch-films')">Stretch Films</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('surface-protection')">Surface Protection Films</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('thermal-paper')">Thermal Paper Rolls</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showPage('cling-films')">Cling Films</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary btn-custom ms-2" href="#contact">Get Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Premium Plastic Packaging Solutions</h1>
+                            <p class="hero-subtitle">
+                                Leading supplier of stretch films, surface protection films, thermal paper rolls, 
+                                and cling films for industrial and commercial applications worldwide.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a href="#products" class="btn btn-light btn-custom">
+                                    Explore Products
+                                </a>
+                                <a href="#contact" class="btn btn-outline-light btn-custom">
+                                    Request Quote
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 fw-bold mb-3">Our Product Range</h2>
+                    <p class="lead text-muted">
+                        Comprehensive packaging solutions for every industry need
+                    </p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" onclick="showPage('stretch-films')" class="text-decoration-none">
+                            <div class="product-card">
+                            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.arteau.com%2Fen%2Fproduit%2Fhand-stretch-film-en%2F&psig=AOvVaw0nU2OOtHHb2AYaao6hyqXi&ust=1755287462355000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCND-qcuJi48DFQAAAAAdAAAAABAE" 
+                                 alt="Stretch Films" class="product-image">
+                            <h4 class="mb-3">Stretch Films</h4>
+                            <p class="text-muted mb-3">
+                                High-performance stretch wrapping films for pallet wrapping, 
+                                bundling, and securing loads during shipping and storage.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Hand & Machine Grade</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Various Gauges Available</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Superior Cling Properties</li>
+                            </ul>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" onclick="showPage('surface-protection')" class="text-decoration-none">
+                            <div class="product-card">
+                            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftrimaco.com%2Fproducts%2Fprotective-films%2Fhard-surface-film%2F&psig=AOvVaw3nYf1lpVzqOTLuFsASEJyr&ust=1755287653205000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOih852Ki48DFQAAAAAdAAAAABAE" 
+                                 alt="Surface Protection Films" class="product-image">
+                            <h4 class="mb-3">Surface Protection Films</h4>
+                            <p class="text-muted mb-3">
+                                Temporary adhesive films protecting surfaces from scratches, 
+                                contamination, and damage during manufacturing and shipping.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Low to High Tack Options</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>No Residue Removal</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>UV Resistant Variants</li>
+                            </ul>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" onclick="showPage('thermal-paper')" class="text-decoration-none">
+                            <div class="product-card">
+                            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpapertec.ca%2Fproducts%2F3-1-8-x-200-thermal-receipt-paper-rolls-50-rolls%3Fsrsltid%3DAfmBOoq_5Jcys4nPZp3wSxJTijVvFYSNjWlV_Hbqrs8Ccfi8Jl9dXWkz&psig=AOvVaw3ml1J2tgvqyKcH1UiA8Op0&ust=1755287759291000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJD_89KKi48DFQAAAAAdAAAAABAL" 
+                                 alt="Thermal Paper Rolls" class="product-image">
+                            <h4 class="mb-3">Thermal Paper Rolls</h4>
+                            <p class="text-muted mb-3">
+                                Premium quality thermal paper for POS systems, credit card terminals, 
+                                ATMs, and various printing applications.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>BPA-Free Options</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Long-lasting Print Quality</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Custom Sizes Available</li>
+                            </ul>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <a href="#" onclick="showPage('cling-films')" class="text-decoration-none">
+                            <div class="product-card">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Cling Films" class="product-image">
+                            <h4 class="mb-3">Cling Films</h4>
+                            <p class="text-muted mb-3">
+                                Food-grade cling films for kitchen, catering, and food packaging 
+                                applications with excellent clarity and cling properties.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Food Safe Materials</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Microwave Safe Options</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Professional & Retail Sizes</li>
+                            </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-5" style="background: white;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4">About MH Overseas</h2>
+                        <p class="lead mb-4">
+                            Welcome to MH Overseas — your trusted global partner in premium packaging solutions. With over 30 years of industry experience, we specialize in supplying high-quality products such as stretch films, thermal paper rolls, BOPP tapes, shrink films, and a wide range of industrial and commercial packaging materials. Rooted in deep expertise and a legacy built on reliability, we bridge the gap between leading manufacturers and businesses worldwide, ensuring consistent quality, competitive pricing, and timely delivery. Whether you’re a wholesaler, distributor, or end-user, MH Overseas is committed to supporting your packaging needs with integrity, innovation, and excellence — across India, Canada, and beyond.
+                        </p>
+                        <p class="mb-4">
+                            Our commitment to quality, innovation, and customer satisfaction has made us 
+                            the preferred choice for businesses seeking reliable packaging solutions.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-white p-5 rounded-4" style="background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);">
+                            <h3 class="mb-4">Our Mission</h3>
+                            <p class="mb-4">
+                                To provide innovative, sustainable, and cost-effective packaging 
+                                solutions that protect products and enhance operational efficiency.
+                            </p>
+                            <h4 class="mb-3">Core Values</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Quality Excellence</li>
+                                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Customer Focus</li>
+                                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Environmental Responsibility</li>
+                                <li class="mb-2"><i class="bi bi-check-circle me-2"></i>Continuous Innovation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 fw-bold mb-3">Get In Touch</h2>
+                    <p class="lead text-muted">
+                        Ready to optimize your packaging? Contact us for expert advice and competitive quotes.
+                    </p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row g-4">
+                            <div class="col-lg-7">
+                                <div class="contact-card">
+                                    <h3 class="mb-4">Request a Quote</h3>
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label class="form-label">First Name</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label">Phone</label>
+                                                <input type="tel" class="form-control">
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Company</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Product Interest</label>
+                                                <select class="form-control">
+                                                    <option value="">Select a product category</option>
+                                                    <option value="stretch-films">Stretch Films</option>
+                                                    <option value="surface-protection">Surface Protection Films</option>
+                                                    <option value="thermal-paper">Thermal Paper Rolls</option>
+                                                    <option value="cling-films">Cling Films</option>
+                                                    <option value="custom-solution">Custom Solution</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">Message</label>
+                                                <textarea class="form-control" rows="4" 
+                                                    placeholder="Tell us about your packaging requirements..."></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary btn-lg">
+                                                    <i class="bi bi-send me-2"></i>Send Message
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-5">
+                                <div class="contact-info-card">
+                                    <h3 class="mb-4">Contact Information</h3>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-info-icon">
+                                            <i class="bi bi-geo-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Address</h6>
+                                            <p>
+                                                Mississauga, ON, Canada<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-info-icon">
+                                            <i class="bi bi-telephone"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Phone</h6>
+                                            <p>
+                                                +1 (705) 988-5207<br>
+                                                +1 (437) 428-5102<br>
+                                                +1 (365) 998-0354                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-info-icon">
+                                            <i class="bi bi-envelope"></i>
+                                        </div>
+                                        <div class="text-truncate">
+                                            <h6>Email</h6>
+                                            <p>
+                                                mhoverseasinc@gmail.com<br>
+                                                <!-- support@packprosolutions.com -->
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-info-icon">
+                                            <i class="bi bi-clock"></i>
+                                        </div>
+                                        <div>
+                                            <h6>Business Hours</h6>
+                                            <p>
+                                                Mon-Fri: 8:00 AM - 6:00 PM<br>
+                                                Sat: 9:00 AM - 4:00 PM<br>
+                                                Sun: Closed
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- STRETCH FILMS PAGE -->
+    <div id="stretch-films" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>Stretch Films</h1>
+                <p class="lead">High-performance stretch wrapping films for secure pallet wrapping and load containment</p>
+            </div>
+        </div>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1609126050754-54a3eb0c8300?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Stretch Films" class="img-fluid rounded-3 mb-4">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">Premium Stretch Films</h2>
+                        <p class="mb-4">
+                            Our stretch films are manufactured from linear low-density polyethylene (LLDPE) resin, 
+                            providing exceptional stretchability, puncture resistance, and load containment.
+                        </p>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Available Types</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Hand Stretch Film</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 12" to 20" widths</li>
+                                        <li>• 60-150 gauge thickness</li>
+                                        <li>• 1500' standard length</li>
+                                        <li>• 3" core size</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Machine Stretch Film</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 20" to 30" widths</li>
+                                        <li>• 50-120 gauge thickness</li>
+                                        <li>• 5000'-9000' lengths</li>
+                                        <li>• 3" core size</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Common Sizes</h4>
+                            <div class="mb-3">
+                                <span class="size-badge">12" x 1500' - 80 Gauge</span>
+                                <span class="size-badge">15" x 1500' - 80 Gauge</span>
+                                <span class="size-badge">18" x 1500' - 80 Gauge</span>
+                                <span class="size-badge">20" x 5000' - 70 Gauge</span>
+                                <span class="size-badge">18" x 1500' - 90 Gauge</span>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Key Features</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge">Superior Cling</span>
+                                <span class="feature-badge">Puncture Resistant</span>
+                                <span class="feature-badge">High Clarity</span>
+                                <span class="feature-badge">Easy Unwind</span>
+                                <span class="feature-badge">Load Stability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="product-detail-card">
+                            <h3 class="mb-4">Applications & Industries</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>Warehouse & Distribution</h5>
+                                    <p>Secure palletized goods for storage and transportation.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Manufacturing</h5>
+                                    <p>Bundle and protect finished goods and raw materials.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Retail & E-commerce</h5>
+                                    <p>Package products for shipment and transit protection.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SURFACE PROTECTION PAGE -->
+    <div id="surface-protection" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>Surface Protection Films</h1>
+                <p class="lead">Temporary adhesive films that protect critical surfaces from damage</p>
+            </div>
+        </div>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1581244177775-84615b81cd79?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Surface Protection Films" class="img-fluid rounded-3 mb-4">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">Surface Protection Films</h2>
+                        <p class="mb-4">
+                            Our surface protection films provide temporary protection for stainless steel, 
+                            aluminum, glass, painted surfaces, and laminates with clean removal.
+                        </p>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Film Types</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Polyethylene Films</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 0.002" thickness</li>
+                                        <li>• Low to medium tack</li>
+                                        <li>• UV resistant options</li>
+                                        <li>• Clear or blue tinted</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Polypropylene Films</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 0.002" thickness</li>
+                                        <li>• Ultra-removable adhesive</li>
+                                        <li>• Chemical resistant</li>
+                                        <li>• Excellent clarity</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Standard Sizes</h4>
+                            <div class="mb-3">
+                                <span class="size-badge">24" x 200'</span>
+                                <span class="size-badge">36" x 200'</span>
+                                <span class="size-badge">48" x 200'</span>
+                                <span class="size-badge">60" x 200'</span>
+                                <span class="size-badge">Custom Sizes</span>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Key Benefits</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge">No Residue</span>
+                                <span class="feature-badge">Easy Application</span>
+                                <span class="feature-badge">UV Stable</span>
+                                <span class="feature-badge">Conformable</span>
+                                <span class="feature-badge">Clean Removal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="product-detail-card">
+                            <h3 class="mb-4">Applications</h3>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Stainless Steel</h5>
+                                    <p>Protect brushed, mirror, and textured surfaces during fabrication.</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Glass & Mirrors</h5>
+                                    <p>Safeguard glass panels and mirrors from scratches.</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Painted Surfaces</h5>
+                                    <p>Protect painted metal and powder-coated surfaces.</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Laminates</h5>
+                                    <p>Shield decorative laminates and countertops.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- THERMAL PAPER PAGE -->
+    <div id="thermal-paper" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>Thermal Paper Rolls</h1>
+                <p class="lead">Premium quality thermal paper for POS systems and receipt printers</p>
+            </div>
+        </div>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">Thermal Paper Rolls</h2>
+                        <p class="mb-4">
+                            Our thermal paper rolls produce crisp, clear images without requiring 
+                            ink or ribbons. Available in BPA-free formulations for various applications.
+                        </p>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Popular Sizes</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Credit Card Terminals</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 2¼" x 50' rolls</li>
+                                        <li>• 57mm x 40mm rolls</li>
+                                        <li>• 57mm x 38mm rolls</li>
+                                        <li>• ½" core size</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>POS Receipt Printers</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 3⅛" x 230' rolls</li>
+                                        <li>• 80mm x 80mm rolls</li>
+                                        <li>• 80mm x 70mm rolls</li>
+                                        <li>• 7/16" core size</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Standard Specifications</h4>
+                            <div class="mb-3">
+                                <span class="size-badge">2¼" x 50'</span>
+                                <span class="size-badge">2¼" x 85'</span>
+                                <span class="size-badge">3⅛" x 230'</span>
+                                <span class="size-badge">80mm x 80mm</span>
+                                <span class="size-badge">57mm x 40mm</span>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Features</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge">BPA-Free Options</span>
+                                <span class="feature-badge">Long-lasting Print</span>
+                                <span class="feature-badge">Jam-Free Operation</span>
+                                <span class="feature-badge">High Resolution</span>
+                                <span class="feature-badge">Custom Printing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Thermal Paper Rolls" class="img-fluid rounded-3 mb-4">
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="product-detail-card">
+                            <h3 class="mb-4">Compatible Equipment</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>POS Systems</h5>
+                                    <p>Epson TM-T88 series, Star TSP-100, Bixolon SRP-350, Citizen CT-S310 printers.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Credit Card Terminals</h5>
+                                    <p>Verifone VX520, Ingenico ICT220, PAX terminals, First Data FD series.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Mobile Printers</h5>
+                                    <p>Compact handheld receipt printers and portable POS systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CLING FILMS PAGE -->
+    <div id="cling-films" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>Cling Films</h1>
+                <p class="lead">Food-grade cling films for kitchen, catering, and food packaging</p>
+            </div>
+        </div>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cling Films" class="img-fluid rounded-3 mb-4">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">Professional Cling Films</h2>
+                        <p class="mb-4">
+                            Our cling films are manufactured from food-grade materials, providing 
+                            excellent cling properties, clarity, and barrier protection for food applications.
+                        </p>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Available Types</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Household Rolls</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 12" width (30cm)</li>
+                                        <li>• 100-500 meter lengths</li>
+                                        <li>• Dispenser box included</li>
+                                        <li>• Microwave safe</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Commercial Catering</h6>
+                                    <ul class="list-unstyled">
+                                        <li>• 18" width (45cm)</li>
+                                        <li>• 300-1500 meter lengths</li>
+                                        <li>• Professional cutter box</li>
+                                        <li>• Heavy-duty thickness</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Common Sizes</h4>
+                            <div class="mb-3">
+                                <span class="size-badge">12" x 300m</span>
+                                <span class="size-badge">18" x 300m</span>
+                                <span class="size-badge">12" x 500m</span>
+                                <span class="size-badge">18" x 1500m</span>
+                                <span class="size-badge">24" x 300m</span>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-card">
+                            <h4 class="mb-3">Key Properties</h4>
+                            <div class="mb-3">
+                                <span class="feature-badge">Food Safe</span>
+                                <span class="feature-badge">Microwave Safe</span>
+                                <span class="feature-badge">High Clarity</span>
+                                <span class="feature-badge">Strong Cling</span>
+                                <span class="feature-badge">Easy Tear</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="product-detail-card">
+                            <h3 class="mb-4">Applications</h3>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Food Service</h5>
+                                    <p>Restaurants, cafes, and catering services for food wrapping.</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Food Processing</h5>
+                                    <p>Industrial food packaging and meat wrapping facilities.</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Retail Food</h5>
+                                    <p>Supermarkets and delis for fresh food packaging.</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Home Kitchen</h5>
+                                    <p>Household food storage and microwave cooking.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <i class="bi bi-box-seam me-2"></i>MH Overseas
+                    </div>
+                    <p class="text-light mb-4">
+                        Your trusted partner for premium plastic packaging solutions. 
+                        Quality products, expert service, and sustainable practices.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+                        <a href="#" class="text-light">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a href="#" class="text-light">
+                            <i class="bi bi-twitter fs-5"></i>
+                        </a>
+                        <a href="#" class="text-light">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Products</h5>
+                    <div class="footer-links">
+                        <div class="d-flex flex-column gap-2">
+                            <a href="#" onclick="showPage('stretch-films')">Stretch Films</a>
+                            <a href="#" onclick="showPage('surface-protection')">Surface Protection</a>
+                            <a href="#" onclick="showPage('thermal-paper')">Thermal Paper</a>
+                            <a href="#" onclick="showPage('cling-films')">Cling Films</a>
+                            <a href="#contact">Custom Solutions</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <div class="footer-links">
+                        <div class="d-flex flex-column gap-2">
+                            <a href="#contact">Technical Support</a>
+                            <a href="#contact">Custom Manufacturing</a>
+                            <a href="#contact">Bulk Orders</a>
+                            <a href="#contact">Fast Delivery</a>
+                            <a href="#contact">Consultation</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <div class="footer-links">
+                        <div class="d-flex flex-column gap-2">
+                            <a href="#" onclick="showPage('home')">About Us</a>
+                            <a href="#contact">Contact</a>
+                            <a href="#">Careers</a>
+                            <a href="#">News</a>
+                            <a href="#">Quality</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Support</h5>
+                    <div class="footer-links">
+                        <div class="d-flex flex-column gap-2">
+                            <a href="#">Help Center</a>
+                            <a href="#">Product Guides</a>
+                            <a href="#">Safety Data</a>
+                            <a href="#">Downloads</a>
+                            <a href="#contact">Get Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-light mb-0">
+                        &copy; 2025 MH Overseas Inc.. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="#" class="me-3">Privacy Policy</a>
+                        <a href="#" class="me-3">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Simple page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show requested page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#contact') {
+                    e.preventDefault();
+                    showPage('home');
+                    setTimeout(() => {
+                        document.getElementById('contact').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            });
+        });
+
+        // Initialize home page as active
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+            this.reset();
+        });
+
+        // Mobile menu close on link click
+        document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
